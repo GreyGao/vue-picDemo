@@ -1,17 +1,32 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <Episode></Episode>
+    <!--<router-view/>-->
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import HelloWorld from '@/components/HelloWorld'
+  import Episode from '@/components/Episode'
+  import VueAwesomeSwiper from 'vue-awesome-swiper'
+  import Vue from 'vue'
+
+  Vue.use(VueAwesomeSwiper)
+
+  require('@/swiper/swiper.css')
+
+  export default {
+    name: 'app',
+    components: { HelloWorld, Episode }
+  }
 </script>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
